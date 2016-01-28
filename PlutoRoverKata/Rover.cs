@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace PlutoRoverKata
 {
@@ -19,7 +20,7 @@ namespace PlutoRoverKata
             { 'S', 'E' },
             { 'E', 'N' }
         };
-
+        
         public Rover(int x, int y, char heading)
         {
             X = 0;
@@ -75,6 +76,16 @@ namespace PlutoRoverKata
                 case 'L':
                     Heading = leftTurnHeadingMap[Heading];
                     break;
+            }
+
+            if (X < 0)
+            {
+                X = 100;
+            }
+
+            if (Y < 0)
+            {
+                Y = 100;
             }
         }
     }
