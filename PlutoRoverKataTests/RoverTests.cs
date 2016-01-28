@@ -43,5 +43,18 @@ namespace PlutoRoverKataTests
             Assert.AreEqual(-1, rover.Y);
             Assert.AreEqual('N', rover.Heading);
         }
+
+        [Test]
+        public void Command_ForwardTwice_Valid()
+        {
+            var rover = new Rover(0, 0, 'N');
+
+            rover.Command('F');
+            rover.Command('F');
+
+            Assert.AreEqual(0, rover.X);
+            Assert.AreEqual(2, rover.Y);
+            Assert.AreEqual('N', rover.Heading);
+        }
     }
 }
