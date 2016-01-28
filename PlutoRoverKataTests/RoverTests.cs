@@ -304,7 +304,7 @@ namespace PlutoRoverKataTests
             }
         }
 
-        public class SequenceOfCommands
+        public class SequenceOfCommandsTests
         {
             [Test]
             public void Command_Sequence_Valid()
@@ -319,10 +319,10 @@ namespace PlutoRoverKataTests
             }
         }
 
-        public class VaryingMaxGridSize
+        public class VaryingMaxGridSizeTests
         {
             [Test]
-            public void Command_Sequence_Valid_VaryingGridSize()
+            public void Command_SequenceVaryingGridSize_Valid()
             {
                 var rover = new Rover(0, 0, 'N', 200, 200);
 
@@ -331,6 +331,22 @@ namespace PlutoRoverKataTests
                 Assert.AreEqual(0, rover.X);
                 Assert.AreEqual(199, rover.Y);
                 Assert.AreEqual('S', rover.Heading);
+            }
+        }
+
+        public class ObstacleTests
+        {
+            [Test]
+            public void Command_Sequence_WithObstacles_Throws()
+            {
+                var obstacles = new List<Obstacle> { new Obstacle { X = 0, Y = 2 } };
+                var rover = new Rover(0, 0, 'N', 200, 200, obstacles);
+
+                Assert.Throws<ObstacleException>(() => rover.Command("FF"));
+
+                Assert.AreEqual(0, rover.X);
+                Assert.AreEqual(1, rover.Y);
+                Assert.AreEqual('N', rover.Heading);
             }
         }
     }

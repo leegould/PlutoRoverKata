@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace PlutoRoverKata
 {
@@ -20,13 +21,14 @@ namespace PlutoRoverKata
             { 'E', 'N' }
         };
         
-        public Rover(int x, int y, char heading, int xmax = 100, int ymax = 100)
+        public Rover(int x, int y, char heading, int xmax = 100, int ymax = 100, List<Obstacle> obstacles = null)
         {
             X = x;
             Y = y;
             Heading = heading;
             XMax = xmax;
             YMax = ymax;
+            Obstacles = obstacles;
         }
         
         public int X { get; set; }
@@ -35,24 +37,29 @@ namespace PlutoRoverKata
         public int XMax { get; set; }
         public int YMax { get; set; }
 
+        public List<Obstacle> Obstacles { get; set; } 
+
         public void Command(char cmd)
         {
+            var newx = X;
+            var newy = Y;
+
             switch (cmd)
             {
                 case 'F':
                     switch (Heading)
                     {
                         case 'N':
-                            Y += 1;
+                            newy += 1;
                             break;
                         case 'S':
-                            Y -= 1;
+                            newy -= 1;
                             break;
                         case 'W':
-                            X -= 1;
+                            newx -= 1;
                             break;
                         default:
-                            X += 1;
+                            newx += 1;
                             break;
                     }
                     break;
@@ -60,16 +67,16 @@ namespace PlutoRoverKata
                     switch (Heading)
                     {
                         case 'N':
-                            Y -= 1;
+                            newy -= 1;
                             break;
                         case 'S':
-                            Y += 1;
+                            newy += 1;
                             break;
                         case 'E':
-                            X -= 1;
+                            newx -= 1;
                             break;
                         default:
-                            X += 1;
+                            newx += 1;
                             break;
                     }
                     break;
@@ -81,15 +88,23 @@ namespace PlutoRoverKata
                     break;
             }
 
-            if (X < 0)
+            if (newx < 0)
             {
-                X = XMax;
+                newx = XMax;
             }
 
-            if (Y < 0)
+            if (newy < 0)
             {
-                Y = YMax;
+                newy = YMax;
             }
+
+            if (Obstacles != null && Obstacles.Any(obstacle => obstacle.X == newx && obstacle.Y == newy))
+            {
+                throw new ObstacleException();
+            }
+
+            X = newx;
+            Y = newy;
         }
 
         public void Command(string commands)
