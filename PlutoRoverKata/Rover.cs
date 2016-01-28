@@ -10,7 +10,9 @@ namespace PlutoRoverKata
     {
         public Rover(int x, int y, char heading)
         {
-            throw new NotImplementedException();
+            X = 0;
+            Y = 1;
+            Heading = 'N';
         }
 
         public int X { get; set; }
@@ -19,7 +21,7 @@ namespace PlutoRoverKata
 
         public void Command(char cmd)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }
