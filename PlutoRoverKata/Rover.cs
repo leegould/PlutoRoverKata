@@ -9,6 +9,14 @@ namespace PlutoRoverKata
 {
     public class Rover
     {
+        readonly Dictionary<char, char> rightTurnHeadingMap = new Dictionary<char, char>
+        {
+            { 'N', 'E' },
+            { 'E', 'S' },
+            { 'S', 'W' },
+            { 'W', 'N' }
+        };
+
         public Rover(int x, int y, char heading)
         {
             X = 0;
@@ -31,21 +39,7 @@ namespace PlutoRoverKata
                     Y -= 1;
                     break;
                 case 'R':
-                    switch (Heading)
-                    {
-                        case 'N':
-                            Heading = 'E';
-                            break;
-                        case 'E':
-                            Heading = 'S';
-                            break;
-                        case 'S':
-                            Heading = 'W';
-                            break;
-                        default:
-                            Heading = 'N';
-                            break;
-                    }
+                    Heading = rightTurnHeadingMap[Heading];
                     break;
                 case 'L':
                     switch (Heading)
