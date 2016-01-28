@@ -210,8 +210,9 @@ namespace PlutoRoverKataTests
 
                 rover.Command('R');
                 rover.Command('F');
+                rover.Command('F');
 
-                Assert.AreEqual(1, rover.X);
+                Assert.AreEqual(2, rover.X);
                 Assert.AreEqual(0, rover.Y);
                 Assert.AreEqual('E', rover.Heading);
             }
