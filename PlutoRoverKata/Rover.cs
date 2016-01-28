@@ -53,17 +53,20 @@ namespace PlutoRoverKata
                     }
                     break;
                 case 'B':
-                    if (Heading == 'N')
+                    switch (Heading)
                     {
-                        Y -= 1;
-                    }
-                    else if (Heading == 'S')
-                    {
-                        Y += 1;
-                    }
-                    else
-                    {
-                        X += 1;
+                        case 'N':
+                            Y -= 1;
+                            break;
+                        case 'S':
+                            Y += 1;
+                            break;
+                        case 'E':
+                            X -= 1;
+                            break;
+                        default:
+                            X += 1;
+                            break;
                     }
                     break;
                 case 'R':
