@@ -21,7 +21,14 @@ namespace PlutoRoverKata
 
         public void Command(char cmd)
         {
-            Y = 1;
+            if (cmd == 'F')
+            {
+                Y = 1;
+            }
+            else
+            {
+                Y = -1;
+            }
         }
     }
 }
