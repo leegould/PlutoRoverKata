@@ -318,5 +318,20 @@ namespace PlutoRoverKataTests
                 Assert.AreEqual('E', rover.Heading);
             }
         }
+
+        public class VaryingMaxGridSize
+        {
+            [Test]
+            public void Command_Sequence_Valid_VaryingGridSize()
+            {
+                var rover = new Rover(0, 0, 'N', 200, 200);
+
+                rover.Command("RRFF");
+
+                Assert.AreEqual(0, rover.X);
+                Assert.AreEqual(199, rover.Y);
+                Assert.AreEqual('S', rover.Heading);
+            }
+        }
     }
 }

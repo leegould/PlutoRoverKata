@@ -27,11 +27,21 @@ namespace PlutoRoverKata
             X = x;
             Y = y;
             Heading = heading;
+            XMax = 100;
+            YMax = 100;
+        }
+
+        public Rover(int x, int y, char heading, int xmax, int ymax) : this(x, y, heading)
+        {
+            XMax = xmax;
+            YMax = ymax;
         }
 
         public int X { get; set; }
         public int Y { get; set; }
         public char Heading { get; set; }
+        public int XMax { get; set; }
+        public int YMax { get; set; }
 
         public void Command(char cmd)
         {
@@ -81,12 +91,12 @@ namespace PlutoRoverKata
 
             if (X < 0)
             {
-                X = 100;
+                X = XMax;
             }
 
             if (Y < 0)
             {
-                Y = 100;
+                Y = YMax;
             }
         }
 
