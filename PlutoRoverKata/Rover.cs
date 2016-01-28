@@ -25,9 +25,13 @@ namespace PlutoRoverKata
             {
                 Y += 1;
             }
-            else
+            else if (cmd == 'B')
             {
                 Y -= 1;
+            }
+            else
+            {
+                Heading = 'E';
             }
         }
     }
