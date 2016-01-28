@@ -12,7 +12,7 @@ namespace PlutoRoverKata
         {
             X = 0;
             Y = y;
-            Heading = 'N';
+            Heading = heading;
         }
 
         public int X { get; set; }
@@ -34,7 +34,7 @@ namespace PlutoRoverKata
                     {
                         Heading = 'E';
                     }
-                    else
+                    else if (Heading == 'E')
                     {
                         Heading = 'S';
                     }
