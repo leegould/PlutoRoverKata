@@ -57,6 +57,10 @@ namespace PlutoRoverKata
                     {
                         Y -= 1;
                     }
+                    else if (Heading == 'S')
+                    {
+                        Y += 1;
+                    }
                     else
                     {
                         X += 1;
