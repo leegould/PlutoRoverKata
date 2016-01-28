@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Collections.Generic;
 
 namespace PlutoRoverKata
 {
@@ -22,21 +20,15 @@ namespace PlutoRoverKata
             { 'E', 'N' }
         };
         
-        public Rover(int x, int y, char heading)
+        public Rover(int x, int y, char heading, int xmax = 100, int ymax = 100)
         {
             X = x;
             Y = y;
             Heading = heading;
-            XMax = 100;
-            YMax = 100;
-        }
-
-        public Rover(int x, int y, char heading, int xmax, int ymax) : this(x, y, heading)
-        {
             XMax = xmax;
             YMax = ymax;
         }
-
+        
         public int X { get; set; }
         public int Y { get; set; }
         public char Heading { get; set; }
