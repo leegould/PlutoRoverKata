@@ -11,6 +11,16 @@ namespace PlutoRoverKataTests
     public class RoverTests
     {
         [Test]
+        public void Constructor_Valid()
+        {
+            var rover = new Rover(0, 0, 'N');
+
+            Assert.AreEqual(0, rover.X);
+            Assert.AreEqual(0, rover.Y);
+            Assert.AreEqual('N', rover.Heading);
+        }
+
+        [Test]
         public void Command_Forward_Valid()
         {
             var rover = new Rover(0, 0, 'N');
