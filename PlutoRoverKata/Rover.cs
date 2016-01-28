@@ -40,7 +40,14 @@ namespace PlutoRoverKata
                     }
                     break;
                 case 'L':
-                    Heading = 'W';
+                    if (Heading == 'N')
+                    {
+                        Heading = 'W';
+                    }
+                    else
+                    {
+                        Heading = 'N';
+                    }
                     break;
             }
         }
