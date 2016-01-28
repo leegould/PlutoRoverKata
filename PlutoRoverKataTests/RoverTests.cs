@@ -99,8 +99,8 @@ namespace PlutoRoverKataTests
         {
             var rover = new Rover(0, 0, 'N');
 
-            rover.Command('L');
-            rover.Command('L');
+            rover.Command('R');
+            rover.Command('R');
 
             Assert.AreEqual(0, rover.X);
             Assert.AreEqual(0, rover.Y);

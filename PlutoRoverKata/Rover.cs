@@ -30,7 +30,14 @@ namespace PlutoRoverKata
                     Y -= 1;
                     break;
                 case 'R':
-                    Heading = 'E';
+                    if (Heading == 'N')
+                    {
+                        Heading = 'E';
+                    }
+                    else
+                    {
+                        Heading = 'S';
+                    }
                     break;
                 case 'L':
                     Heading = 'W';
