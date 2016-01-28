@@ -26,7 +26,7 @@ namespace PlutoRoverKataTests
             var rover = new Rover(0, 0, 'N');
 
             rover.Command('F');
-             
+
             Assert.AreEqual(0, rover.X);
             Assert.AreEqual(1, rover.Y);
             Assert.AreEqual('N', rover.Heading);
@@ -57,7 +57,6 @@ namespace PlutoRoverKataTests
             Assert.AreEqual('N', rover.Heading);
         }
 
-
         [Test]
         public void Command_ForwardThenBackward_Valid()
         {
@@ -69,6 +68,18 @@ namespace PlutoRoverKataTests
             Assert.AreEqual(0, rover.X);
             Assert.AreEqual(0, rover.Y);
             Assert.AreEqual('N', rover.Heading);
+        }
+
+        [Test]
+        public void Command_Turn_Valid()
+        {
+            var rover = new Rover(0, 0, 'N');
+
+            rover.Command('R');
+
+            Assert.AreEqual(0, rover.X);
+            Assert.AreEqual(0, rover.Y);
+            Assert.AreEqual('E', rover.Heading);
         }
     }
 }
