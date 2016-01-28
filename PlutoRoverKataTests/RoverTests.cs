@@ -156,7 +156,6 @@ namespace PlutoRoverKataTests
             Assert.AreEqual('N', rover.Heading);
         }
 
-
         [Test]
         public void Command_TurnLeftFromWest_Valid()
         {
@@ -167,6 +166,18 @@ namespace PlutoRoverKataTests
             Assert.AreEqual(0, rover.X);
             Assert.AreEqual(0, rover.Y);
             Assert.AreEqual('S', rover.Heading);
+        }
+
+        [Test]
+        public void Command_TurnLeftFromSouth_Valid()
+        {
+            var rover = new Rover(0, 0, 'S');
+
+            rover.Command('L');
+
+            Assert.AreEqual(0, rover.X);
+            Assert.AreEqual(0, rover.Y);
+            Assert.AreEqual('E', rover.Heading);
         }
     }
 }
