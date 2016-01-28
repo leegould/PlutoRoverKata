@@ -45,7 +45,7 @@ namespace PlutoRoverKataTests
                 rover.Command('B');
 
                 Assert.AreEqual(0, rover.X);
-                Assert.AreEqual(-1, rover.Y);
+                Assert.AreEqual(100, rover.Y);
                 Assert.AreEqual('N', rover.Heading);
             }
 
@@ -227,7 +227,7 @@ namespace PlutoRoverKataTests
                 rover.Command('F');
 
                 Assert.AreEqual(0, rover.X);
-                Assert.AreEqual(-1, rover.Y);
+                Assert.AreEqual(100, rover.Y);
                 Assert.AreEqual('S', rover.Heading);
             }
 
@@ -242,7 +242,7 @@ namespace PlutoRoverKataTests
                 rover.Command('F');
                 rover.Command('F');
 
-                Assert.AreEqual(-2, rover.X);
+                Assert.AreEqual(99, rover.X);
                 Assert.AreEqual(0, rover.Y);
                 Assert.AreEqual('W', rover.Heading);
             }
@@ -286,7 +286,7 @@ namespace PlutoRoverKataTests
                 rover.Command('B');
                 rover.Command('B');
 
-                Assert.AreEqual(-2, rover.X);
+                Assert.AreEqual(99, rover.X);
                 Assert.AreEqual(0, rover.Y);
                 Assert.AreEqual('E', rover.Heading);
             }
