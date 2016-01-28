@@ -36,7 +36,14 @@ namespace PlutoRoverKata
             switch (cmd)
             {
                 case 'F':
-                    Y += 1;
+                    if (Heading == 'N')
+                    {
+                        Y += 1;
+                    }
+                    else
+                    {
+                        X = 1;
+                    }
                     break;
                 case 'B':
                     Y -= 1;
