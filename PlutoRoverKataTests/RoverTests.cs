@@ -303,5 +303,20 @@ namespace PlutoRoverKataTests
                 Assert.AreEqual('E', rover.Heading);
             }
         }
+
+        public class SequenceOfCommands
+        {
+            [Test]
+            public void Command_Sequence_Valid()
+            {
+                var rover = new Rover(0, 0, 'N');
+
+                rover.Command("FFRFF");
+
+                Assert.AreEqual(2, rover.X);
+                Assert.AreEqual(2, rover.Y);
+                Assert.AreEqual('E', rover.Heading);
+            }
+        }
     }
 }

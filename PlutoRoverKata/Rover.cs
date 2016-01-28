@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace PlutoRoverKata
 {
@@ -87,6 +88,11 @@ namespace PlutoRoverKata
             {
                 Y = 100;
             }
+        }
+
+        public void Command(string commands)
+        {
+            
         }
     }
 }
