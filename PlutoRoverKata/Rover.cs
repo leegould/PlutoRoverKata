@@ -92,7 +92,10 @@ namespace PlutoRoverKata
 
         public void Command(string commands)
         {
-            
+            foreach (var cmd in commands)
+            {
+                Command(cmd);
+            }
         }
     }
 }
