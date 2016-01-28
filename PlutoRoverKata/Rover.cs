@@ -48,7 +48,7 @@ namespace PlutoRoverKata
                             X -= 1;
                             break;
                         default:
-                            X = 1;
+                            X += 1;
                             break;
                     }
                     break;
