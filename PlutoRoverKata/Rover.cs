@@ -11,7 +11,7 @@ namespace PlutoRoverKata
         public Rover(int x, int y, char heading)
         {
             X = 0;
-            Y = 1;
+            Y = y;
             Heading = 'N';
         }
 
@@ -21,7 +21,7 @@ namespace PlutoRoverKata
 
         public void Command(char cmd)
         {
-            
+            Y = 1;
         }
     }
 }
