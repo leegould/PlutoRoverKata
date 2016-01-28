@@ -200,5 +200,20 @@ namespace PlutoRoverKataTests
                 Assert.AreEqual('N', rover.Heading);
             }
         }
+
+        public class MovementAndHeadingsTests
+        {
+            [Test]
+            public void Command_TurnRightFromNorth_MoveForward_Valid()
+            {
+                var rover = new Rover(0, 0, 'N');
+
+                rover.Command('R');
+
+                Assert.AreEqual(1, rover.X);
+                Assert.AreEqual(0, rover.Y);
+                Assert.AreEqual('E', rover.Heading);
+            }
+        }
     }
 }
