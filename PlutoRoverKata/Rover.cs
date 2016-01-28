@@ -38,8 +38,11 @@ namespace PlutoRoverKata
                         case 'E':
                             Heading = 'S';
                             break;
-                        default:
+                        case 'S':
                             Heading = 'W';
+                            break;
+                        default:
+                            Heading = 'N';
                             break;
                     }
                     break;
