@@ -23,7 +23,7 @@ namespace PlutoRoverKata
         {
             if (cmd == 'F')
             {
-                Y = 1;
+                Y += 1;
             }
             else
             {
