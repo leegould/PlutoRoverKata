@@ -27,7 +27,7 @@ namespace PlutoRoverKata
             }
             else
             {
-                Y = -1;
+                Y -= 1;
             }
         }
     }
