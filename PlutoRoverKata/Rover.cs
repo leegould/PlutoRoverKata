@@ -23,7 +23,7 @@ namespace PlutoRoverKata
         
         public Rover(int x, int y, char heading)
         {
-            X = 0;
+            X = x;
             Y = y;
             Heading = heading;
         }
