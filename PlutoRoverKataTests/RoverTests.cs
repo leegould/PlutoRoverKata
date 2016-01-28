@@ -82,7 +82,6 @@ namespace PlutoRoverKataTests
             Assert.AreEqual('E', rover.Heading);
         }
 
-
         [Test]
         public void Command_TurnLeft_Valid()
         {
