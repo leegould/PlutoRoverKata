@@ -21,17 +21,17 @@ namespace PlutoRoverKata
 
         public void Command(char cmd)
         {
-            if (cmd == 'F')
+            switch (cmd)
             {
-                Y += 1;
-            }
-            else if (cmd == 'B')
-            {
-                Y -= 1;
-            }
-            else
-            {
-                Heading = 'E';
+                case 'F':
+                    Y += 1;
+                    break;
+                case 'B':
+                    Y -= 1;
+                    break;
+                default:
+                    Heading = 'E';
+                    break;
             }
         }
     }
